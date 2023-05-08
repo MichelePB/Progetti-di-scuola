@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Michele"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-11-21 09:18:18 "/>
+        <attribute name="created" value="TWljaGVsZTtNSUNIRUxFLVBDOzIwMjItMTEtMjE7IjA4OjE2OjIxICI7MjU3NA=="/>
+        <attribute name="edited" value="TWljaGVsZTtNSUNIRUxFLVBDOzIwMjItMTEtMjE7IjA5OjE4OjE4ICI7MTsyNjkx"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="x" type="Real" array="False" size=""/>
+            <declare name="Temp" type="Integer" array="False" size=""/>
+            <declare name="Ist" type="Real" array="False" size=""/>
+            <declare name="SV" type="Real" array="False" size=""/>
+            <declare name="Stato" type="Real" array="False" size=""/>
+            <declare name="Tp" type="Real" array="False" size=""/>
+            <declare name="Tm" type="Real" array="False" size=""/>
+            <input variable="SV"/>
+            <input variable="Ist"/>
+            <do expression="1=1">
+                <input variable="x"/>
+                <assign variable="Temp" expression="(11.7801345911*x*x*x*x*x*x) - (81.0554741243*x*x*x*x*x) + (236.9845480760*x*x*x*x) - (385.0186051708*x*x*x) + (383.5287342348*x*x) - (259.9213580912*x) + (112.4119763985)"/>
+                <assign variable="Tp" expression="SV+Ist"/>
+                <assign variable="Tm" expression="SV-Ist"/>
+                <output expression="Temp" newline="True"/>
+                <if expression="Temp &gt; Tp">
+                    <then>
+                        <assign variable="Stato" expression="0"/>
+                        <output expression="&quot;Caldaia OFF&quot;" newline="True"/>
+                    </then>
+                    <else>
+                        <assign variable="Stato" expression="0"/>
+                        <if expression="Temp &gt;= Tp &amp;&amp; Temp &gt;= SV">
+                            <then>
+                                <output expression="stato" newline="True"/>
+                            </then>
+                            <else>
+                                <if expression="Temp &lt;= Tm">
+                                    <then>
+                                        <output expression="&quot;Caldaia ON&quot;" newline="True"/>
+                                        <assign variable="Stato" expression="1"/>
+                                        <output expression="Stato" newline="True"/>
+                                    </then>
+                                    <else>
+                                        <output expression="stato" newline="True"/>
+                                    </else>
+                                </if>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+            </do>
+        </body>
+    </function>
+</flowgorithm>
