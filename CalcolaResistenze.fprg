@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Michele"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-09-13 03:09:35 "/>
+        <attribute name="created" value="TWljaGVsZTtNSUNIRUxFOzIwMjEtMDktMTM7IjAyOjI4OjUzICI7MjM5MQ=="/>
+        <attribute name="edited" value="TWljaGVsZTtNSUNIRUxFOzIwMjEtMDktMTM7IjAzOjA5OjM1ICI7MTsyNDk5"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="R1, R2, R3, R4, R5, DueRes, TreRes, QuattroRes, Pi&#249;Res" type="Real" array="False" size=""/>
+            <output expression="&quot;Inserire valore primo resistore&quot;" newline="True"/>
+            <input variable="R1"/>
+            <output expression="&quot;Inserire valore secondo resistore&quot;" newline="True"/>
+            <input variable="R2"/>
+            <output expression="&quot;Inserire valore terzo resistore&quot;" newline="True"/>
+            <input variable="R3"/>
+            <if expression="R3 = 0">
+                <then>
+                    <assign variable="DueRes" expression="(R1*R2)/(R1+R2)"/>
+                    <output expression="&quot;La resistenza totale &#232; &quot;&amp;DueRes" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;Inserire valore quarto resistore&quot;" newline="True"/>
+                    <input variable="R4"/>
+                    <if expression="R4 = 0">
+                        <then>
+                            <assign variable="TreRes" expression="1/((1/R1)+(1/R2)+(1/R3))"/>
+                            <output expression="&quot;La resistenza totale &#232; &quot;&amp;TreRes" newline="True"/>
+                        </then>
+                        <else>
+                            <output expression="&quot;Inserire valore quinto resistore&quot;" newline="True"/>
+                            <input variable="R5"/>
+                            <if expression="R5 = 0">
+                                <then>
+                                    <assign variable="QuattroRes" expression="1/((1/R1)+(1/R2)+(1/R3)+(1/R4))"/>
+                                    <output expression="&quot;La resistenza totale &#232; &quot;&amp;QuattroRes" newline="True"/>
+                                </then>
+                                <else>
+                                    <assign variable="Pi&#249;Res" expression="1/((1/R1)+(1/R2)+(1/R3)+(1/R4)+(1/R5))"/>
+                                    <output expression="&quot;La resistenza totale &#232; &quot;&amp;Pi&#249;Res" newline="True"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
